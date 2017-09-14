@@ -1,4 +1,4 @@
 services:
-#    sq_site.example:
-#        class: Sq\Bundle\SiteBundle\Example
+#    sq_square_t.example:
+#        class: Sq\SquareTBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]

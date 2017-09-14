@@ -1,6 +1,6 @@
 <?php
 
-namespace Sq\SiteBundle\Tests\Controller;
+namespace Sq\SquareTBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

@@ -1,5 +1,5 @@
-sq_site:
-    resource: "@SqSiteBundle/Controller/"
+sq_square_t:
+    resource: "@SqSquareTBundle/Controller/"
     type:     annotation
     prefix:   /
 
