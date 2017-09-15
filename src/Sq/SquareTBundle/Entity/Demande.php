@@ -56,7 +56,20 @@ class Demande
      */
     private $email;
 
+     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="traite", type="boolean")
+     */
+    private $traite;
 
+    
+    public function __construct()
+    {
+        $this->traite = 0;
+}
+    
+    
     /**
      * Get id
      *
@@ -186,5 +199,33 @@ class Demande
     {
         return $this->email;
     }
-}
 
+    /**
+     * Set traite
+     *
+     * @param boolean $traite
+     *
+     * @return Demande
+     */
+    public function setTraite($traite)
+    {
+        $this->traite = $traite;
+
+        return $this;
+    }
+
+    /**
+     * Get traite
+     *
+     * @return boolean
+     */
+    public function getTraite()
+    {
+        return $this->traite;
+    }
+    
+    public function isTraite()
+    {
+        return $this->traite;
+    }
+}
