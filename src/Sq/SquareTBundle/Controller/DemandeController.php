@@ -30,7 +30,7 @@ class DemandeController extends Controller
     }
     
     /**
-     * @Route("/Afficher")
+     * @Route("/Afficher", name="afficher")
      */
     public function AfficherAction()
     {
@@ -49,8 +49,16 @@ class DemandeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('SqSquareTBundle:Demande');
-        dump($repo);die();
-        return new \Symfony\Component\BrowserKit\Response('zz');
+        $et = $repo->find($id);
+        
+            if($et != null)
+            {
+                $et->setTraite(true);
+                $em->persist($et);
+                $em->flush();
+            }
+        
+        return $this->redirectToRoute("afficher");
     }
 
 }
