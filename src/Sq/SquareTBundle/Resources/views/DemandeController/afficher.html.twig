@@ -1,0 +1,51 @@
+{%extends "SqSquareTBundle::layout.html.twig"%}
+
+{% block style %}
+        <style>
+    
+    </style>
+{% endblock %}
+
+{% block body %}
+    
+    
+  <div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Prenom</th>
+        <th>Nom</th>
+        <th>Objet</th>
+        <th>Message</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+    {%for entite  in entites%}
+    {%if entite.traite == false%}
+      <tr class="danger">
+        <td>{{entite.prenom}} </td>
+        <td>{{entite.nom}}</td>
+        <td>{{entite.objet}}</td>
+        <td>{{entite.description}}</td>
+        <td>{{entite.email}}</td>
+        <td><a href="{{path('updatestate',{'id':entite.id})}}">Valider</a></td>
+       </tr> 
+    {%else%}
+      <tr class="success">
+        <td>{{entite.prenom}} </td>
+        <td>{{entite.nom}}</td>
+        <td>{{entite.objet}}</td>
+        <td>{{entite.description}}</td>
+        <td>{{entite.email}}</td>
+       </tr> 
+     {%endif%}
+    {%endfor%}
+    </tbody>
+  </table>
+</div>
+
+        
+
+    
+{% endblock %}
